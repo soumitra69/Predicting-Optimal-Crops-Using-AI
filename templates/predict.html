@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crop & Fertilizer Predictor</title>
+    <!DOCTYPE html>
+    <html lang="en">
+
+</head>
+  <style>
+    :root {
+      --primary-color: #2e7d32;
+      --secondary-color: #f5f5f5;
+      --accent-color: #81c784;
+      --text-color: #333;
+      --white: #ffffff;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--secondary-color);
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-top: 30px;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+    
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border 0.3s;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+    }
+    
+    button {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      margin: 25px auto 0;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    
+    button:hover {
+      background-color: #1b5e20;
+      transform: translateY(-2px);
+    }
+    
+    #result {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: var(--accent-color);
+      border-radius: 4px;
+      font-size: 18px;
+      text-align: center;
+      display: none;
+    }
+    
+    /* BC Video Comparison Section */
+    .comparison-section {
+      margin-top: 40px;
+      display: none;
+    }
+    
+    .comparison-title {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+    
+    .comparison-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .comparison-card {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .comparison-card h3 {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .video-placeholder {
+      width: 100%;
+      height: 200px;
+      background-color: #eee;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    .stats {
+      margin-top: 15px;
+    }
+    
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #ddd;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+      
+      h2 {
+        font-size: 24px;
+      }
+      
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      button {
+        max-width: 100%;
+      }
+      
+      .comparison-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h2>Crop & Fertilizer Predictor </h2>
+      
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="N">Nitrogen (N):</label>
+          <input type="number" id="N" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="P">Phosphorus (P):</label>
+          <input type="number" id="P" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="K">Potassium (K):</label>
+          <input type="number" id="K" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="pH">pH Level:</label>
+          <input type="number" id="pH" step="0.1" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="rain">Rainfall (mm):</label>
+          <input type="number" id="rain" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="temp">Temperature (°C):</label>
+          <input type="number" id="temp" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="soil">Soil Color:</label>
+          <select id="soil" required>
+            <option value="">Select Soil Color</option>
+            <option value="Black">Black</option>
+            <option value="Red">Red</option>
+            <option value="Brown">Brown</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="district">District:</label>
+          <select id="district" required>
+            <option value="">Select District</option>
+            <option value="Kolhapur">Kolhapur</option>
+            <option value="Pune">Pune</option>
+            <option value="Sangli">Sangli</option>
+          </select>
+        </div>
+      </div>
+      
+      <button onclick="predict()">Analyze & Predict</button>
+      
+      <div id="result"></div>
+      
+      <!-- BC Video Comparison Section -->
+      <div class="comparison-section" id="comparisonSection">
+        <h3 class="comparison-title">Before/After Soil Improvement Analysis</h3>
+        <div class="comparison-container">
+          <div class="comparison-card">
+            <h3>Before Treatment</h3>
+            <div class="video-placeholder">
+              [BC Video: Soil Condition Before]
+            </div>
+            <div class="stats">
+              <div class="stat-item">
+                <span>Nitrogen:</span>
+                <span id="beforeN">Low</span>
+              </div>
+              <div class="stat-item">
+                <span>Phosphorus:</span>
+                <span id="beforeP">Medium</span>
+              </div>
+              <div class="stat-item">
+                <span>Potassium:</span>
+                <span id="beforeK">Low</span>
+              </div>
+              <div class="stat-item">
+                <span>pH Level:</span>
+                <span id="beforePH">5.2</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="comparison-card">
+            <h3>After Treatment</h3>
+            <div class="video-placeholder">
+              [BC Video: Soil Condition After]
+            </div>
+            <div class="stats">
+              <div class="stat-item">
+                <span>Nitrogen:</span>
+                <span id="afterN">Optimal</span>
+              </div>
+              <div class="stat-item">
+                <span>Phosphorus:</span>
+                <span id="afterP">Optimal</span>
+              </div>
+              <div class="stat-item">
+                <span>Potassium:</span>
+                <span id="afterK">High</span>
+              </div>
+              <div class="stat-item">
+                <span>pH Level:</span>
+                <span id="afterPH">6.8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<script>
+        function predict() {
+            const soil = document.getElementById('soil').value;
+            const district = document.getElementById('district').value;
+
+            let input = {
+                Nitrogen: parseInt(document.getElementById('N').value),
+                Phosphorus: parseInt(document.getElementById('P').value),
+                Potassium: parseInt(document.getElementById('K').value),
+                pH: parseFloat(document.getElementById('pH').value),
+                Rainfall: parseInt(document.getElementById('rain').value),
+                Temperature: parseInt(document.getElementById('temp').value),
+                [`Soil_color_${soil}`]: 1,
+                [`District_Name_${district}`]: 1
+            };
+
+            fetch('http://localhost:5000/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(input)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML =
+                        `<strong>Predicted Crop:</strong> ${data.predicted_crop}<br>
+           <strong>Recommended Fertilizer:</strong> ${data.predicted_fertilizer}`;
+                })
+                .catch(err => {
+                    document.getElementById('result').innerText = "Prediction failed. Check server or input.";
+                    console.error(err);
+                });
+        }
+    </script>
+
+</body>
+
+</html>

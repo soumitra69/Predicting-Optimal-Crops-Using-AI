@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction System</title>
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="./Assets/logo.png" alt="Crop Prediction Icon">
+                </div>
+                <span>CropPredict</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#methodology">Methodology</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-btn">Resources ▼</button>
+                        <div class="dropdown-content">
+                            <a href="https://docs.google.com/document/d/14G8_tTrI4Q3wwrL2jiAzaIKcHrbjmm9L/edit?usp=sharing&ouid=116141416287705321302&rtpof=true&sd=true"
+                                target="_blank">Research Paper</a>
+                            <a href="./CSV.csv" target="_blank">Dataset</a>
+                            <a href="https://docs.google.com/document/d/1EdCPVJKvca0P0kUL095xnKzJp4AfgRSK/edit?usp=sharing&ouid=116141416287705321302&rtpof=true&sd=true"
+                                target="_blank">Model Documentation</a>
+                            <a href="#">API Reference</a>
+                            <a href="#">User Guide</a>
+                        </div>
+                    </li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Predicting Optimal Crops Using AI</h1>
+            <p>Revolutionizing agriculture with data-driven crop selection to optimize yield, resource utilization, and
+                environmental sustainability.</p>
+            <a href="./templates/predict.html" class="btn">Find Best Crops</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-title">
+            <h2>Key Features</h2>
+            <p>Our crop prediction system leverages advanced machine learning algorithms and comprehensive environmental
+                data to provide accurate crop recommendations.</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="./Assets/-analytics-presentation-website-isolated-lettering-typography-idea-w-2AKX9P0.jpg"
+                        alt="High Accuracy">
+                </div>
+                <div class="feature-content">
+                    <h3>High Accuracy</h3>
+                    <p>Our Random Forest model achieves 99.58% accuracy in predicting optimal crop types based on
+                        environmental and soil data.</p>
+                    <a href="#results" class="btn">View Results</a>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="./Assets/1646407405281.jpg" alt="Comprehensive Analysis">
+                </div>
+                <div class="feature-content">
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Incorporates multiple parameters including nitrogen, phosphorus, potassium, temperature,
+                        humidity, pH, and rainfall.</p>
+                    <a href="#methodology" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="./Assets/Resource-Optimization-Techniques-in-Project-Management-1068x552-1.jpg"
+                        alt="Resource Optimization">
+                </div>
+                <div class="feature-content">
+                    <h3>Resource Optimization</h3>
+                    <p>Helps farmers optimize resource allocation by selecting crops that are best suited to their
+                        specific environmental conditions.</p>
+                    <a href="#" class="btn">Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="methodology">
+        <div class="methodology-content">
+            <div class="section-title">
+                <h2>Our Methodology</h2>
+                <p>We employed a systematic approach to develop and validate our crop prediction model.</p>
+            </div>
+            <div class="methodology-grid">
+                <div class="methodology-step">
+                    <div class="step-number">1</div>
+                    <h3>Data Collection</h3>
+                    <p>Gathered comprehensive data on soil composition (N, P, K), climate factors (temperature,
+                        humidity, rainfall), and pH levels from various agricultural regions.</p>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">2</div>
+                    <h3>Data Preprocessing</h3>
+                    <p>Cleaned the dataset to remove inconsistencies, applied normalization techniques, and prepared the
+                        data for machine learning algorithms.</p>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">3</div>
+                    <h3>Model Development</h3>
+                    <p>Implemented a Random Forest Classifier, creating multiple decision trees to enhance prediction
+                        accuracy and reliability.</p>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">4</div>
+                    <h3>Training & Validation</h3>
+                    <p>Split the dataset into 70% training and 30% testing sets, evaluated performance using accuracy,
+                        precision, recall, and F1-score metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results">
+        <div class="section-title">
+            <h2>Research Results</h2>
+            <p>Our model demonstrated exceptional performance in crop prediction tasks, with detailed metrics presented
+                below.</p>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-number">99.58%</div>
+                <p>Overall Accuracy</p>
+            </div>
+            <div class="result-card">
+                <div class="result-number">~1.00</div>
+                <p>Average F1-Score</p>
+            </div>
+            <div class="result-card">
+                <div class="result-number">7</div>
+                <p>Environmental Parameters</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="team-content">
+            <div class="section-title">
+                <h2>Research Team</h2>
+                <p>Meet the talented individuals who contributed to this groundbreaking agricultural research.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D5635AQEi6vPTcqbojg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1690697162045?e=1746896400&v=beta&t=tGKr452HZvK2LzAh6q0BWNiqhCrGUaI_5WycLsj7WUI"
+                            alt="Subir Gupta">
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Subir Gupta</h3>
+                        <p>Professor, <br> Department of CSE (AI & ML)
+                            Haldia Institute of Technology, Haldia, West Bengal, India
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/dr-subir-gupta-64096081/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <a href="#"><i class="fab fa-github"></i></a> -->
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D35AQGBUVb82uqgQg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1696988661040?e=1746896400&v=beta&t=3WVi0CvKaXAbNYmOOQRfYWNSmDVd-8Oq4qAyn8nbd9I"
+                            alt="Subir Gupta">
+                    </div>
+                    <div class="member-info">
+                        <h3>Swarup Parua</h3>
+                        <p>Student, <br>
+                            Department of CSE (AI & ML) Haldia Institute of Technology, Haldia, West Bengal, India
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/swarup-parua-02a133243/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <a href="#"><i class="fab fa-github"></i></a> -->
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQG1xlc7AMq7EQ/profile-displayphoto-shrink_800_800/B56ZZzkC9fHgAk-/0/1745695551834?e=1751500800&v=beta&t=wPNdE2UrZaAM3dl_2wq5k6RMZVWyGwq5mY7n1Nz-G0g"
+                            alt="Dhiman Debsarma">
+                    </div>
+                    <div class="member-info">
+                        <h3>Dhiman Debsarma</h3>
+                        <p>Student, <br>
+                            Department of CSE (AI & ML) Haldia Institute of Technology, Haldia, West Bengal, India</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/dhiman-debsarma-1313b826a/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <a href="#"><i class="fab fa-github"></i></a> -->
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQGclQnzfB0nDw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696579286745?e=1751500800&v=beta&t=ktgTn6s2XUaK_AVzD2dqYXaWT_JzTcHI3b1VDEsAdkE"
+                            alt="Soumitra Samanta">
+                    </div>
+                    <div class="member-info">
+                        <h3>Soumitra Samanta</h3>
+                        <p>Student, <br>
+                            Department of CSE (AI & ML) Haldia Institute of Technology, Haldia, West Bengal, India</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/soumitrasamanta69/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/soumitra69" target="_blank"><i class="fab fa-github"></i></a>
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>Get in Touch</h2>
+            <p>Have questions about our research or interested in collaboration? Feel free to reach out.</p>
+        </div>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>CropPredict</h3>
+                <p>Revolutionizing agriculture through machine learning and data-driven crop selection for optimal yield
+                    and resource utilization.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#methodology">Methodology</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://docs.google.com/document/d/14G8_tTrI4Q3wwrL2jiAzaIKcHrbjmm9L/edit?usp=sharing&ouid=116141416287705321302&rtpof=true&sd=true"
+                            target="_blank">Research Paper</a></li>
+                    <li><a href="#">Dataset</a></li>
+                    <li><a href="#">Model Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">User Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Haldia Institute of Technology</li>
+                    <li>Haldia, West Bengal, India</li>
+                    <li>Email: croppredict@hit.ac.in</li>
+                    <li>Phone: +91 1234567890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 CropPredict - Haldia Institute of Technology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+
+</html>
